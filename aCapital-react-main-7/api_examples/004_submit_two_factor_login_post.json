@@ -1,0 +1,9 @@
+{
+  "success": false,
+  "error": {
+    "code": "E_VALIDATION_ERROR",
+    "messages": [
+      "The code_id field must be defined"
+    ]
+  }
+}

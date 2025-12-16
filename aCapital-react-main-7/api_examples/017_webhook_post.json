@@ -1,0 +1,10 @@
+{
+  "success": false,
+  "error": {
+    "code": "E_VALIDATION_ERROR",
+    "messages": [
+      "The selected status is invalid",
+      "The externalId field must be a valid UUID"
+    ]
+  }
+}

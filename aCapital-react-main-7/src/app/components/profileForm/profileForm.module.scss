@@ -1,0 +1,826 @@
+.authForm__blocks {
+    width: 49%;
+}
+
+.authForm__block {
+    border-radius: 20px;
+    padding: 40px 40px;
+    width: auto;
+    height: auto;
+    background: #fff;
+}
+
+.activateForm__input_row {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.activateForm__input {
+    border: 1.50px solid var(--border-light-gray);
+    border-radius: 6px;
+    padding: 0px 16px;
+    width: 60px;
+    height: 84px;
+    background: #fff;
+    outline: none;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--gray-dark);
+    text-align: center;
+
+    &:hover {
+        border: 1.50px solid #bfd9ff;
+    }
+    &:focus {
+        border: 1.50px solid #bfd9ff;
+    }
+}
+
+.activateForm span {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 133%;
+    color: #000;
+    text-align: center;
+}
+
+.activateForm p {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--text-light-gray);
+  margin-bottom: 10px;
+}
+
+.activateForm__resetcode {
+    font-weight: 600;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    color: var(--text-light-gray);
+}
+
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.authForm span {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 133%;
+    color: #000;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.authForm__group {
+     display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.authForm__label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 125%;
+    color: var(--gray-dark);
+}
+
+.authForm__input {
+    border: 1.50px solid var(--border-light-gray);
+    border-radius: 6px;
+    padding: 0px 16px;
+    height: 52px;
+    background: #fff;
+    outline: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--text-light-gray);
+    &:hover {
+        border: 1.50px solid #bfd9ff;
+    }
+    &:focus {
+        border: 1.50px solid #bfd9ff;
+    }
+}
+
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal {
+    border-radius: 20px;
+    padding: 36px 44px;
+    width: 516px;
+    height: auto;
+    background: #fff;
+    margin: 120px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: fadeIn 0.2s ease;
+  position: relative;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.activateForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.activateForm span {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 133%;
+    color: #000;
+    text-align: center;
+}
+
+.activateFormClose {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border-radius: 500px;
+  width: 24px;
+  height: 24px;
+  background: #e2e2e2;
+  cursor: pointer;
+  border: none;
+}
+
+.confirmBtn {
+  background: #2e7d32;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.confirmBtn:hover {
+  background: #1b5e20;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        margin: 0px 24px 48px 24px;
+        padding: 24px;
+    }
+}
+
+
+.phoneInputs {
+    height: 52px !important;
+    width: 100% !important;
+    border: 1.50px solid var(--border-light-gray) !important;
+}
+
+.profile__sm__btn {
+    box-shadow: 0 4px 8px 0 rgba(207, 207, 207, 0.25);
+    background: var(--border-light-gray);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 203px;
+    height: 44px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 125%;
+    color: var(--text-light-gray);
+    border: none;
+    cursor: pointer;
+}
+
+.emailVerificationRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.emailVerified {
+    font-weight: 500;
+    font-size: 10px;
+    color: var(--cusses);
+}
+
+.emailNotVerified {
+    font-weight: 500;
+    font-size: 11px;
+    color: var(--red-50);
+}
+
+.emailStatus {
+    margin-top: 8px;
+    font-size: 11px;
+    line-height: 140%;
+    color: var(--text-light-gray);
+}
+
+.activateForm__btndis {
+    box-shadow: 0 4px 8px 0 rgba(207, 207, 207, 0.25);
+    background: var(--border-light-gray);
+    border-radius: 6px;
+    padding: 0px 36px;
+    height: 60px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 100%;
+    width: 100%;
+    color: var(--text-light-gray);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.activateForm__btn{
+    box-shadow: 0 4px 8px 0 rgba(229, 105, 105, 0.25);
+    background: #d13636;
+    border-radius: 6px;
+    padding: 0px 36px;
+    height: 60px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    width: 100%;
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.activateForm__input__date {
+    border: 1.50px solid var(--border-light-gray);
+    border-radius: 6px;
+    padding: 0px 16px;
+    width: 100%;
+    height: 52px;
+    background: #fff;
+    outline: none;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--gray-dark);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    &::placeholder {
+        color: var(--gray-dark);
+    }
+    &:hover {
+        border: 1.50px solid #bfd9ff;
+    }
+    &:focus {
+        border: 1.50px solid #bfd9ff;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        background: url('/date.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+        display: block;
+        right: 10px;
+        top: 14px;
+        z-index: 3;
+    }
+}
+
+.activateForm__btnAct {
+    box-shadow: 0 4px 8px 0 rgba(229, 105, 105, 0.25);
+    background: #d13636;
+    border-radius: 6px;
+    padding: 0px 36px;
+    height: 60px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    width: 100%;
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.profile__sm__btn:hover {
+    box-shadow: 0 4px 8px 0 rgba(229, 105, 105, 0.25);
+    background: #d13636;
+    color: #fff;
+}
+
+.authForm__group__row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.authForm__group__row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 15px; 
+}
+
+.authForm__providerItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    min-height: 72px;
+}
+
+.confirmBtn {
+    border: 1px solid var(--red-50);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--red-50);
+    font-size: 12px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.confirmBtn:hover,
+.confirmBtn:active,
+.confirmBtn:focus-visible {
+    background: #ff4a4a;
+    color: #fff;
+    border-color: #ff4a4a;
+    outline: none;
+}
+
+.confirmBtn:active {
+    transform: translateY(1px);
+}
+
+.confirmBtn:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.infoText {
+    color: var(--gray-dark);
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.authForm__group__left {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.authForm__group__btn {
+    border: 1px solid var(--red-50);
+    border-radius: 6px;
+    padding: 0px 24px;
+    width: 25%;
+    height: 50px;
+    box-shadow: 0 4px 8px 0 rgba(229, 105, 105, 0.25);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 125%;
+    text-align: center;
+    background: #fff;
+    color: var(--red-50);
+    cursor: pointer;
+}
+
+.authForm__group__btn:hover {
+    background: var(--red-50);
+    color: #fff;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+.forgetpassw__links {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    color: var(--text-light-gray);
+}
+
+.activateForm__showbtn {
+  position: absolute;
+  right: 15px;
+  top: 55%;
+  border: none;
+  cursor: pointer;
+  width: 18px;
+  height: 14px;
+  border: none;
+  background: transparent;
+}
+
+.links__bottom {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 140%;
+    margin-top: 16px;
+}
+
+.links__bottom a {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 140%;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-align: center;
+    color: #fff;
+    margin-left: 5px;
+}
+
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+  
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+    
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid var(--border-light-gray);
+  transition: 0.3s;
+  border-radius: 26px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 2px;
+  background-color: var(--border-light-gray);
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #fff; /* фиолетовый */
+  border: 1px solid var(--red-50);
+}
+
+input:checked + .slider:before {
+  transform: translateX(12px);
+  background: var(--red-50);
+}
+
+.authForm__group__switch .slider {
+    margin-bottom: 0px;
+}
+
+.authForm__group__row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.authForm__group__left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.authForm__group__right {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.authForm__group__rows {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+
+/* Checkbox.module.css */
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px 0px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  position: relative;
+  font-weight: 500;
+font-size: 14px;
+line-height: 125%;
+color: var(--gray-dark);
+}
+
+.checkboxContainer span {
+    margin-bottom: 0px;
+}
+
+.checkboxContainer input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 4px;
+  position: relative;
+  transition: background-color 0.2s;
+  margin-right: 10px;
+}
+
+.checkboxContainer input:checked + .checkmark {
+  background-color: #eee; /* синий при checked */
+  border: 3px solid #ff4343;;
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkboxContainer input:checked + .checkmark::after {
+  display: block;
+  left: 0px;
+  top: 0px;
+  width: 10px;
+  height: 8px;
+  border: solid #ff4343;;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.authForm__inputDate {
+    border: 1.50px solid var(--border-light-gray);
+    border-radius: 6px;
+    padding: 0px 16px;
+    width: 100%;
+    height: 52px;
+    background: #fff;
+    outline: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--text-light-gray);
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        background-image: url('/date.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 16px;
+        height: 18px;
+        top: 10px;
+        right: 10px;
+        z-index: 2;
+    }
+    &:hover {
+        border: 1.50px solid #bfd9ff;
+    }
+    &:focus {
+        border: 1.50px solid #bfd9ff;
+    }
+}
+
+.authForm__group__switch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 26px;
+}
+
+.authForm__group__switch p {
+    margin-bottom: 0px;
+}
+
+.activateForm__sucess {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.activateForm__sucess {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 143%;
+    text-align: center;
+    color: #000;
+}
+
+.modals {
+    border-radius: 20px;
+    padding: 36px 44px;
+    width: 516px;
+    height: auto;
+    background: #fff;
+    margin: 120px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: fadeIn 0.2s ease;
+  position: relative;
+}
+
+.modalOverlay {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    top: -24px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    padding: 24px;
+}
+
+.authForm__group__radio {
+    margin: auto 0;
+}
+
+.radio__group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: system-ui, sans-serif;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.radio__option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.radio__option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-light-gray);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Состояние hover */
+.radio__option input[type="radio"]:hover {
+  border-color: #999;
+}
+
+.radio__option input[type="radio"]:disabled {
+    background-color: #ececec;
+    border-color: #999;
+}
+
+/* При выборе */
+.radio__option input[type="radio"]:checked {
+  border: 4px solid #ff4a4a; /* красный цвет как на скрине */
+  background-color: white;
+}
+
+/* Внутренний кружок */
+.radio__option input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/* Текст метки */
+.radio__label {
+  font-weight: 500;
+    font-size: 14px;
+    line-height: 125%;
+    color: var(--gray-dark);
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: #f5f5f5;
+    transition: all 0.15s ease;
+}
+
+.radio__option input[type="radio"]:checked + .radio__label {
+  background: #ff4a4a;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+    .authForm__blocks  {
+        width: 100%;
+        margin: 0px auto;
+        padding: 0px 24px;
+    }
+    .authForm__block  {
+        padding: 24px 24px;
+    }
+    .authForm__block {
+        width: 100%;
+    }
+    .authForm span {
+        font-size: 24px;
+    }
+    .authForm__group__row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .authForm__providerItem {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .authForm__group__left {
+        width: 100%;
+    }
+    .authForm__group__btn {
+        width: 100%;
+    }
+    .profile__sm__btn {
+        width: 100%;
+    }
+}

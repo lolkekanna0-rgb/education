@@ -1,0 +1,86 @@
+@import "react-phone-input-2/lib/style.css";
+@import "react-datepicker/dist/react-datepicker.css";
+
+:root {
+	--fon: #f1f5f9;
+	--red-50: #ff4343;
+	--gray-dark: #292929;
+	--text-light-gray: #94a3b8;
+	--border-light-gray: #e2e8f0;
+	--cusses: #80c069;
+	--red:hover: #d13636;
+	--fon: #ff4343;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+
+
+html,
+body {
+  max-width: 100vw;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn__gray {
+  border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #f5f6fa;
+    border: none;
+}
+
+@media (max-width: 600px) {
+  .page__main {
+    min-height: auto;
+  }
+
+  .react-tel-input .country-list {
+    max-width: 220px;
+  }
+
+  .react-tel-input .country-list .country-name {
+    font-size: 16px;
+  }
+
+  .react-tel-input .country-list .dial-code {
+    font-size: 16px;
+  }
+}
+
+.react-tel-input {
+  margin-top: 5px;
+}
+
+.react-tel-input .country-list .country-name {
+  font-size: 14px;
+}
+
+.react-tel-input .country-list .dial-code {
+  font-size: 14px;
+}

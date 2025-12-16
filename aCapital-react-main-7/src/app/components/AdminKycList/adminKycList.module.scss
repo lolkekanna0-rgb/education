@@ -1,0 +1,81 @@
+.section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sectionTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  color: var(--gray-dark, #1a1a1a);
+}
+
+.sectionHint {
+  font-size: 14px;
+  color: var(--text-light-gray, #6f6f6f);
+}
+
+.loading,
+.loader {
+  color: var(--text-light-gray, #6f6f6f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 0;
+}
+
+.error {
+  color: var(--red-50, #ff4d4f);
+  font-weight: 500;
+}
+
+.empty {
+  color: var(--text-light-gray, #6f6f6f);
+  font-style: italic;
+}
+
+.muted {
+  color: var(--text-light-gray, #6f6f6f);
+  font-style: italic;
+}
+
+.pre {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  max-height: 260px;
+  overflow: auto;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 16px;
+  }
+
+  .detailRow {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .detailKey {
+    font-size: 13px;
+  }
+
+  .detailValue {
+    font-size: 13px;
+  }
+}

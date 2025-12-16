@@ -1,0 +1,658 @@
+openapi: 3.0.0
+info:
+  title: 3_epic
+  version: 1.0.0
+servers:
+  - url: https://api.ackgt.ru
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+security:
+  - bearerAuth: []
+tags:
+  - name: auth
+  - name: user
+  - name: profile
+  - name: payment
+  - name: namba_one
+  - name: kyc
+  - name: admin
+  - name: admin > user
+  - name: admin > kyc
+paths:
+  /auth/get_registration_code:
+    post:
+      tags:
+        - auth
+      summary: get_registaration_code
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                phone: '+79996663311'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /auth/register:
+    post:
+      tags:
+        - auth
+      summary: register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: api_mgqkirx4_16s757@example.com
+                password: testPass
+                code_id: '{{registration_code_id}}'
+                code: 111111
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /auth/login:
+    post:
+      tags:
+        - auth
+      summary: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                phone: '+79996663311'
+                password: 2FactorSms!
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /auth/submit_two_factor_login:
+    post:
+      tags:
+        - auth
+      summary: submit_two_factor_login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                phone: '+79996663311'
+                code_id: '{{login_code_id}}'
+                code: 111111
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /auth/initiate_password_reset:
+    post:
+      tags:
+        - auth
+      summary: initiate_password_reset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                phone: '+79996663311'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /auth/set_new_password:
+    post:
+      tags:
+        - auth
+      summary: set_new_password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                code_id: 060585fb-e818-4e75-8e47-7473581833c2
+                code: 111111
+                password: test23451
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/get_me:
+    get:
+      tags:
+        - user
+      summary: get_me
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/set_two_factor_provider:
+    post:
+      tags:
+        - user
+      summary: set_two_factor_provider
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                provider: telegram
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/initiate_two_factor_disable:
+    post:
+      tags:
+        - user
+      summary: initiate_two_factor_disable
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/disable_two_factor:
+    post:
+      tags:
+        - user
+      summary: disable_two_factor
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                code_id: b70a386a-e4c9-4bc8-8b13-846308c4016f
+                code: 111111
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/change_password:
+    post:
+      tags:
+        - user
+      summary: change_password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                current_password: test234512
+                new_password: test900000
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/initiate_email_verification:
+    post:
+      tags:
+        - user
+      summary: initiate_email_verification
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/verify_email:
+    post:
+      tags:
+        - user
+      summary: verify_email
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                code_id: eb3b185a-bd7c-4687-8c9c-9b5111bcda73
+                code: 111111
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/logout:
+    post:
+      tags:
+        - user
+      summary: logout
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                logout_other_devices: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /profile/update:
+    post:
+      tags:
+        - profile
+      summary: update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                first_name: Алексей
+                last_name: Смирнов
+                patronymic: Васильевич
+                timezone: Asia/Tbilisi
+                contact_info: test
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /payment/create:
+    post:
+      tags:
+        - payment
+      summary: create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                amount: 10000
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /namba_one/webhook:
+    post:
+      tags:
+        - namba_one
+      summary: webhook
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                createdAt: '2025-10-08T13:56:13.951Z'
+                type: PAYMENT_ORDER
+                version: string
+                data:
+                  guid: string
+                  externalId: string
+                  channel: string
+                  paymentLinkGuid: string
+                  merchantAccountGuid: string
+                  currency: KGS
+                  amount: string
+                  paymentAmount: string
+                  refundAmount: '0'
+                  remark: string
+                  customerGuid: string
+                  maskedPhoneNumber: string
+                  status: string
+                  createdAt: string
+                  settledAt: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /kyc/submit_legal:
+    post:
+      tags:
+        - kyc
+      summary: submit_legal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                general_information:
+                  client_code: '123456'
+                  full_name_ru: ООО "Пример"
+                  short_name_ru: ООО "Пример"
+                  full_name_foreign: Example LLC
+                  short_name_foreign: Example
+                  legal_form: ООО
+                representative_without_power_of_attorney:
+                  name: Иванов Иван Иванович
+                  position: Генеральный директор
+                  document_basis: Приказ №1
+                  start_date: '2023-01-01'
+                representative_with_power_of_attorney:
+                  name: Петров Петр Петрович
+                  document_basis: Доверенность №2
+                  start_date: '2023-01-01'
+                  end_date: '2024-01-01'
+                beneficiary:
+                  name: Сидоров Сергей Сергеевич
+                  contract_number: Д-12345
+                  contract_date: '2022-06-15'
+                beneficial_owner: Сидоров Сергей Сергеевич
+                registration_and_tax_info:
+                  country_of_registration: Россия
+                  inn_or_kpp: '7701234567'
+                  ogrn: '1122334455667'
+                  registration_date: '2010-05-12'
+                  issuing_authority: Межрайонная ИФНС №46 по г. Москве
+                  okpo: '12345678'
+                  bic: '044525225'
+                has_registration_before_2002: false
+                addresses:
+                  legal_address: г. Москва, ул. Ленина, д. 1
+                  postal_address: г. Москва, ул. Ленина, д. 1
+                  activity_location: г. Москва, ул. Ленина, д. 1
+                contacts:
+                  phone: +7 (495) 123-45-67
+                  fax: +7 (495) 123-45-68
+                  email: contact@example.com
+                  website: https://www.example.com
+                license_data:
+                  license_activity_type: Брокерская деятельность
+                  license_details: Лицензия №12345 от 01.01.2020
+                structure_and_assets:
+                  management_structure_info: 'Совет директоров: Иванов И.И., Петров П.П.'
+                  assets_founders_trustees_info: 'Учредители: Иванов И.И.'
+                bank_info:
+                  bank_details: Банк "Пример" Р/с 40702810400000000001
+                  has_accounts_in_terror_sponsor_banks: false
+                  has_relations_with_non_managed_banks: false
+                  is_info_disclosure_issuer: true
+                fatca:
+                  is_us_tax_resident: false
+                  has_us_registration_or_postal_address: false
+                  has_us_taxpayer_beneficiaries_or_controllers: false
+                  has_us_phone_number: false
+                  has_us_address_power_of_attorney: false
+                  has_us_long_term_payment_instructions: false
+                business_relationships:
+                  relationship_purpose: BROKER_SERVICE
+                  relationship_type: LONG_TERM
+                  source_of_funds: Вложение акционеров
+                  business_reputation: POSITIVE
+                  financial_condition: Устойчивое
+                legal_status:
+                  liquidation_in_process: false
+                  bankruptcy_in_process: false
+                  has_court_bankruptcy_decisions: false
+                  has_default_facts: false
+                  agency_ratings: AAA
+                consents:
+                  personal_data_processing_consent: true
+                  information_veracity_confirmation: true
+                  fatca_consent: false
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /kyc/submit_individual_basic:
+    post:
+      tags:
+        - kyc
+      summary: submit_individual_basic
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                first_name: Иван
+                last_name: Петров
+                middle_name: Алексеевич
+                document_name: Паспорт
+                document_series: '1234'
+                document_number: '567890'
+                document_issue_date: '2020-01-15'
+                document_expiry_date: '2030-01-15'
+                document_issuing_authority: ОВД г. Москва
+                citizenship:
+                  - Россия
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /kyc/submit_individual_full:
+    post:
+      tags:
+        - kyc
+      summary: submit_individual_full
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                first_name: Иван
+                last_name: Иванов
+                middle_name: Иванович
+                document_name: Паспорт гражданина Российской Федерации
+                document_series: '4509'
+                document_number: '123456'
+                document_issue_date: '2015-05-20'
+                document_expiry_date: '2025-05-20'
+                document_issuing_authority: ОУФМС России по г. Москве
+                citizenship:
+                  - Россия
+                contact_info:
+                  phone_number: +7 (495) 123-45-67
+                  fax: +7 (495) 765-43-21
+                  email: ivanov@example.com
+                  additional_contact_info: Дополнительная контактная информация
+                stay_permit:
+                  document_name: Вид на жительство
+                  series: '5678'
+                  number: '87654321'
+                  start_date: '2020-01-01'
+                  end_date: '2030-01-01'
+                representative:
+                  full_name_or_entity: ООО Представитель
+                  basis_document: Доверенность
+                  start_of_authority: '2023-01-01'
+                  end_of_authority: '2024-01-01'
+                beneficial_owner:
+                  full_name: Иванов Петр Иванович
+                beneficiary:
+                  full_name_or_entity: ЗАО Бенефициар
+                  contract_number: BNF-123456
+                  contract_date: '2023-03-01'
+                pep:
+                  position: Депутат
+                  employer: Государственная Дума
+                  employer_address: Москва, ул. Охотный Ряд, д. 1
+                pep_relative:
+                  relationship_degree: Брат
+                  full_name: Иванов Сергей Иванович
+                  position: Министр
+                us_taxpayer_indicators:
+                  us_citizenship: false
+                  has_green_card: false
+                  birth_country_is_us: false
+                  physical_or_registered_or_mailing_address_in_us: false
+                  care_of_or_held_mail_address_in_us: false
+                  contact_phone_in_us: false
+                  long_term_payment_instructions_to_us_account: false
+                  power_of_attorney_to_person_with_us_address: false
+                business_relationship:
+                  purpose_of_relationship:
+                    - Инвестиции
+                    - Торговля
+                  nature_of_relationship: Партнёрство
+                  financial_business_activity_goals: Расширение бизнеса
+                  financial_status: Устойчивое
+                  business_reputation: Отличная
+                  sources_of_funds:
+                    - Инвестиции
+                    - Доходы от бизнеса
+                user_consent_data:
+                  personal_data_processing_consent: true
+                  information_accuracy_confirmation: true
+                  fatca_consent: false
+                tax_number: '14214'
+                tax_residence:
+                  is_kyrgyzstan_resident: true
+                  tax_residency_in_other_countries:
+                    - country: Georgia
+                      tax_number: '919238174'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/user/list:
+    get:
+      tags:
+        - admin > user
+      summary: list
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: per_page
+          in: query
+          schema:
+            type: integer
+          example: '10'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/user/get:
+    get:
+      tags:
+        - admin > user
+      summary: get
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: integer
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/user/ban:
+    post:
+      tags:
+        - admin > user
+      summary: unban
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: 2
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/kyc/list:
+    get:
+      tags:
+        - admin > kyc
+      summary: list
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+          example: legal
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: per_page
+          in: query
+          schema:
+            type: integer
+          example: '10'
+        - name: statuses[0]
+          in: query
+          schema:
+            type: string
+          example: created
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/kyc/get:
+    get:
+      tags:
+        - admin > kyc
+      summary: get
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+          example: legal
+        - name: id
+          in: query
+          schema:
+            type: integer
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/kyc/set_status:
+    post:
+      tags:
+        - admin > kyc
+      summary: set_status
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: 2
+                type: legal
+                status: approvedd
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

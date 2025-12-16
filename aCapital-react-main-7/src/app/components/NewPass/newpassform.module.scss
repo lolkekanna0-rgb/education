@@ -1,0 +1,246 @@
+.activateForm__blocks {
+    width: 516px;
+    margin: 120px auto;
+}
+.activateForm__block {
+    border-radius: 20px;
+    padding: 36px 44px;
+    width: 516px;
+    height: auto;
+    background: #fff; 
+}
+
+.activateForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.activateForm span {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 133%;
+    color: #000;
+    text-align: center;
+}
+
+.activateForm p {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--text-light-gray);
+  margin-bottom: 10px;
+}
+
+.activateForm__group {
+     display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.activateForm__label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 125%;
+    color: var(--gray-dark);
+}
+
+.activateForm__input_row {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.activateForm__input {
+    border: 1.50px solid var(--border-light-gray);
+    border-radius: 6px;
+    padding: 0px 16px;
+    width: 60px;
+    height: 84px;
+    background: #fff;
+    outline: none;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--gray-dark);
+    text-align: center;
+    position: relative;
+
+    &:hover {
+        border: 1.50px solid #bfd9ff;
+    }
+    &:focus {
+        border: 1.50px solid #bfd9ff;
+    }
+}
+
+
+
+
+
+.activateForm__btn {
+    box-shadow: 0 4px 8px 0 rgba(229, 105, 105, 0.25);
+    background: var(--red-50);
+    border-radius: 6px;
+    padding: 0px 36px;
+    height: 60px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    width: 100%;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.activateForm__btndis {
+    box-shadow: 0 4px 8px 0 rgba(207, 207, 207, 0.25);
+    background: var(--border-light-gray);
+    border-radius: 6px;
+    padding: 0px 36px;
+    height: 60px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    width: 100%;
+    color: var(--text-light-gray);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.activateForm__resetcode {
+    font-weight: 600;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    color: var(--text-light-gray);
+}
+
+.activateForm__btn:hover {
+    box-shadow: 0 4px 8px 0 rgba(229, 105, 105, 0.25);
+    background: #d13636;
+}
+
+.forgetpassw__links {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    color: var(--text-light-gray);
+}
+
+
+.activateForm__sucess {
+    border-radius: 20px;
+    padding: 36px 44px;
+    width: 516px;
+    height: 436px;
+    background: #fff;
+    margin: 120px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.activateForm__sucess span {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 133%;
+    color: #000;
+    text-align: center;
+}
+
+.activateForm__sucess p {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--text-light-gray);
+  margin-bottom: 20px;
+}
+
+.authForm__group {
+     display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.authForm__label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 125%;
+    color: var(--gray-dark);
+}
+
+.authForm__input {
+    border: 1.50px solid var(--border-light-gray);
+    border-radius: 6px;
+    padding: 0px 16px;
+    height: 52px;
+    background: #fff;
+    outline: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--text-light-gray);
+    &:hover {
+        border: 1.50px solid #bfd9ff;
+    }
+    &:focus {
+        border: 1.50px solid #bfd9ff;
+    }
+}
+
+.activateForm__showbtn {
+  position: absolute;
+  right: 15px;
+  top: 55%;
+  border: none;
+  cursor: pointer;
+  width: 18px;
+  height: 14px;
+}
+
+@media (max-width: 600px) {
+    .activateForm__blocks {
+        width: 100%;
+        margin: 48px auto;
+        padding: 0px 24px;
+    }
+    .activateForm__block {
+        border-radius: 20px;
+        padding: 24px 24px;
+        height: auto;
+        width: 100%;
+        background: #fff; 
+    }
+    .activateForm__input {
+        border: 1.50px solid var(--border-light-gray);
+        border-radius: 6px;
+        padding: 0px 16px;
+        width: 15%;
+        height: 84px; 
+    }
+    .activateForm__sucess {
+        width: 100%;
+        height: auto;
+        margin: 48px auto;
+    }
+    .activateForm__sucess span {
+        font-size: 24px;
+    }
+}

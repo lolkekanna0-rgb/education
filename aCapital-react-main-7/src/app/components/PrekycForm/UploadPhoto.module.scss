@@ -1,0 +1,72 @@
+.upload {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+   width: 100%;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 14px;
+  color: #2a2a2a;
+}
+
+.dropzone {
+  position: relative;
+  border: 1px dashed #d1d5dc;
+    border-radius: 6px;
+    padding: 40px 24px;
+    width: 100%;
+  text-align: center;
+  color: #7a7a7a;
+  cursor: pointer;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: #b3b3b3;
+  }
+}
+
+.input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 125%;
+    color: var(--text-light-gray);
+  .red {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 125%;
+    color: #e53935;
+  }
+}
+
+.subtext {
+  font-weight: 400;
+    font-size: 14px;
+    line-height: 125%;
+    color: var(--text-light-gray);
+}
+
+.error {
+  color: #e53935;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  img {
+    border-radius: 6px;
+    object-fit: cover;
+  }
+}

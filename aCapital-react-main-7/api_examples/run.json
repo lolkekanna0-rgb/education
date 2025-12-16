@@ -1,0 +1,379 @@
+{
+  "generatedAt": "2025-10-14T12:52:58.264Z",
+  "collection": "api_examples/prepared.collection.json",
+  "environment": null,
+  "stats": {
+    "iterations": {
+      "total": 1,
+      "pending": 0,
+      "failed": 0
+    },
+    "items": {
+      "total": 27,
+      "pending": 0,
+      "failed": 0
+    },
+    "scripts": {
+      "total": 57,
+      "pending": 0,
+      "failed": 0
+    },
+    "prerequests": {
+      "total": 27,
+      "pending": 0,
+      "failed": 0
+    },
+    "requests": {
+      "total": 27,
+      "pending": 0,
+      "failed": 0
+    },
+    "tests": {
+      "total": 27,
+      "pending": 0,
+      "failed": 0
+    },
+    "assertions": {
+      "total": 0,
+      "pending": 0,
+      "failed": 0
+    },
+    "testScripts": {
+      "total": 30,
+      "pending": 0,
+      "failed": 0
+    },
+    "prerequestScripts": {
+      "total": 27,
+      "pending": 0,
+      "failed": 0
+    }
+  },
+  "failures": [],
+  "executions": [
+    {
+      "index": 1,
+      "name": "get_registaration_code",
+      "folderPath": "3_epic / auth",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/auth/get_registration_code",
+      "statusCode": 200,
+      "status": "OK",
+      "responseFile": "api_examples/001_get_registaration_code_post.json",
+      "success": true,
+      "failures": []
+    },
+    {
+      "index": 2,
+      "name": "register",
+      "folderPath": "3_epic / auth",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/auth/register",
+      "statusCode": 200,
+      "status": "OK",
+      "responseFile": "api_examples/002_register_post.json",
+      "success": true,
+      "failures": []
+    },
+    {
+      "index": 3,
+      "name": "login",
+      "folderPath": "3_epic / auth",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/auth/login",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/003_login_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 4,
+      "name": "submit_two_factor_login",
+      "folderPath": "3_epic / auth",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/auth/submit_two_factor_login",
+      "statusCode": 422,
+      "status": "Unprocessable Entity",
+      "responseFile": "api_examples/004_submit_two_factor_login_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 5,
+      "name": "initiate_password_reset",
+      "folderPath": "3_epic / auth",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/auth/initiate_password_reset",
+      "statusCode": 429,
+      "status": "Too Many Requests",
+      "responseFile": "api_examples/005_initiate_password_reset_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 6,
+      "name": "set_new_password",
+      "folderPath": "3_epic / auth",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/auth/set_new_password",
+      "statusCode": 400,
+      "status": "Bad Request",
+      "responseFile": "api_examples/006_set_new_password_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 7,
+      "name": "get_me",
+      "folderPath": "3_epic / user",
+      "method": "GET",
+      "url": "https://api.ackgt.ru/user/get_me",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/007_get_me_get.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 8,
+      "name": "set_two_factor_provider",
+      "folderPath": "3_epic / user",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/user/set_two_factor_provider",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/008_set_two_factor_provider_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 9,
+      "name": "initiate_two_factor_disable",
+      "folderPath": "3_epic / user",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/user/initiate_two_factor_disable",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/009_initiate_two_factor_disable_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 10,
+      "name": "disable_two_factor",
+      "folderPath": "3_epic / user",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/user/disable_two_factor",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/010_disable_two_factor_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 11,
+      "name": "change_password",
+      "folderPath": "3_epic / user",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/user/change_password",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/011_change_password_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 12,
+      "name": "initiate_email_verification",
+      "folderPath": "3_epic / user",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/user/initiate_email_verification",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/012_initiate_email_verification_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 13,
+      "name": "verify_email",
+      "folderPath": "3_epic / user",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/user/verify_email",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/013_verify_email_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 14,
+      "name": "logout",
+      "folderPath": "3_epic / user",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/user/logout",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/014_logout_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 15,
+      "name": "update",
+      "folderPath": "3_epic / profile",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/profile/update",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/015_update_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 16,
+      "name": "create",
+      "folderPath": "3_epic / payment",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/payment/create",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/016_create_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 17,
+      "name": "webhook",
+      "folderPath": "3_epic / namba_one",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/namba_one/webhook",
+      "statusCode": 422,
+      "status": "Unprocessable Entity",
+      "responseFile": "api_examples/017_webhook_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 18,
+      "name": "submit_legal",
+      "folderPath": "3_epic / kyc",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/kyc/submit_legal",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/018_submit_legal_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 19,
+      "name": "submit_individual_basic",
+      "folderPath": "3_epic / kyc",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/kyc/submit_individual_basic",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/019_submit_individual_basic_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 20,
+      "name": "submit_individual_full",
+      "folderPath": "3_epic / kyc",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/kyc/submit_individual_full",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/020_submit_individual_full_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 21,
+      "name": "list",
+      "folderPath": "3_epic / admin / user",
+      "method": "GET",
+      "url": "https://api.ackgt.ru/admin/user/list?page=1&per_page=10",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/021_list_get.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 22,
+      "name": "get",
+      "folderPath": "3_epic / admin / user",
+      "method": "GET",
+      "url": "https://api.ackgt.ru/admin/user/get?id=2",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/022_get_get.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 23,
+      "name": "ban",
+      "folderPath": "3_epic / admin / user",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/admin/user/ban",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/023_ban_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 24,
+      "name": "unban",
+      "folderPath": "3_epic / admin / user",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/admin/user/ban",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/024_unban_post.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 25,
+      "name": "list",
+      "folderPath": "3_epic / admin / kyc",
+      "method": "GET",
+      "url": "https://api.ackgt.ru/admin/kyc/list?type=legal&page=1&per_page=10&statuses[0]=created",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/025_list_get.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 26,
+      "name": "get",
+      "folderPath": "3_epic / admin / kyc",
+      "method": "GET",
+      "url": "https://api.ackgt.ru/admin/kyc/get?type=legal&id=2",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/026_get_get.json",
+      "success": false,
+      "failures": []
+    },
+    {
+      "index": 27,
+      "name": "set_status",
+      "folderPath": "3_epic / admin / kyc",
+      "method": "POST",
+      "url": "https://api.ackgt.ru/admin/kyc/set_status",
+      "statusCode": 401,
+      "status": "Unauthorized",
+      "responseFile": "api_examples/027_set_status_post.json",
+      "success": false,
+      "failures": []
+    }
+  ]
+}

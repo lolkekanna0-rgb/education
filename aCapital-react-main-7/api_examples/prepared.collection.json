@@ -1,0 +1,924 @@
+{
+  "info": {
+    "_postman_id": "a011e0fb-ebfc-4d33-872a-a2c7287fa882",
+    "name": "3_epic",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38642826",
+    "_collection_link": "https://teletype-services.postman.co/workspace/My-Workspace~f0938155-905a-414f-8021-98b2581ef5cf/collection/38642826-a011e0fb-ebfc-4d33-872a-a2c7287fa882?action=share&source=collection_link&creator=38642826"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "get_registaration_code",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phone\": \"+79996663311\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{app_url}}/auth/get_registration_code",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "auth",
+                "get_registration_code"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// AUTO-SET-REGISTRATION-CODE",
+                  "let codeId = \"\";",
+                  "try {",
+                  "  const json = pm.response.json();",
+                  "  if (json && json.data && json.data.code_id) {",
+                  "    codeId = json.data.code_id;",
+                  "  } else if (json && json.code_id) {",
+                  "    codeId = json.code_id;",
+                  "  }",
+                  "} catch (error) {",
+                  "  console.warn(\"Unable to parse registration code response\", error);",
+                  "}",
+                  "if (codeId) {",
+                  "  pm.collectionVariables.set('registration_code_id', codeId);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"api_mgqkirx4_16s757@example.com\",\n  \"password\": \"testPass\",\n  \"code_id\": \"{{registration_code_id}}\",\n  \"code\": 111111\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{app_url}}/auth/register",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phone\": \"+79996663311\",\n  \"password\": \"2FactorSms!\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{app_url}}/auth/login",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// AUTO-SET-LOGIN-CODE",
+                  "let codeId = \"\";",
+                  "let token = \"\";",
+                  "try {",
+                  "  const json = pm.response.json();",
+                  "  const data = json && json.data ? json.data : {};",
+                  "  if (data.code_id) {",
+                  "    codeId = data.code_id;",
+                  "  } else if (data.two_factor && data.two_factor.code_id) {",
+                  "    codeId = data.two_factor.code_id;",
+                  "  } else if (json && json.code_id) {",
+                  "    codeId = json.code_id;",
+                  "  }",
+                  "  if (data.token) {",
+                  "    token = data.token;",
+                  "  } else if (data.access_token) {",
+                  "    token = data.access_token;",
+                  "  }",
+                  "} catch (error) {",
+                  "  console.warn(\"Unable to parse login response\", error);",
+                  "}",
+                  "if (codeId) {",
+                  "  pm.collectionVariables.set('login_code_id', codeId);",
+                  "}",
+                  "if (token) {",
+                  "  pm.collectionVariables.set('token', token);",
+                  "  pm.collectionVariables.set('auth_header', 'Bearer ' + token);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "submit_two_factor_login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phone\": \"+79996663311\",\n  \"code_id\": \"{{login_code_id}}\",\n  \"code\": 111111\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{app_url}}/auth/submit_two_factor_login",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "auth",
+                "submit_two_factor_login"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// AUTO-SET-AUTH-TOKEN",
+                  "let token = \"\";",
+                  "try {",
+                  "  const json = pm.response.json();",
+                  "  const data = json && json.data ? json.data : {};",
+                  "  if (data.token) {",
+                  "    token = data.token;",
+                  "  } else if (data.access_token) {",
+                  "    token = data.access_token;",
+                  "  } else if (json && json.token) {",
+                  "    token = json.token;",
+                  "  }",
+                  "} catch (error) {",
+                  "  console.warn(\"Unable to parse two-factor response\", error);",
+                  "}",
+                  "if (token) {",
+                  "  pm.collectionVariables.set('token', token);",
+                  "  pm.collectionVariables.set('auth_header', 'Bearer ' + token);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "initiate_password_reset",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phone\": \"+79996663311\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{app_url}}/auth/initiate_password_reset",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "auth",
+                "initiate_password_reset"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "set_new_password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"code_id\": \"060585fb-e818-4e75-8e47-7473581833c2\",\n    \"code\": 111111,\n    \"password\": \"test23451\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{app_url}}/auth/set_new_password",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "auth",
+                "set_new_password"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "user",
+      "item": [
+        {
+          "name": "get_me",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{app_url}}/user/get_me",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "user",
+                "get_me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "set_two_factor_provider",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"provider\": \"telegram\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{app_url}}/user/set_two_factor_provider",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "user",
+                "set_two_factor_provider"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "initiate_two_factor_disable",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{app_url}}/user/initiate_two_factor_disable",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "user",
+                "initiate_two_factor_disable"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "disable_two_factor",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"code_id\": \"b70a386a-e4c9-4bc8-8b13-846308c4016f\",\n    \"code\": 111111\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{app_url}}/user/disable_two_factor",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "user",
+                "disable_two_factor"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "change_password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"current_password\": \"test234512\",\n    \"new_password\": \"test900000\"\n}  ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{app_url}}/user/change_password",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "user",
+                "change_password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "initiate_email_verification",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{app_url}}/user/initiate_email_verification",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "user",
+                "initiate_email_verification"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "verify_email",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"code_id\": \"eb3b185a-bd7c-4687-8c9c-9b5111bcda73\",\n    \"code\": 111111\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{app_url}}/user/verify_email",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "user",
+                "verify_email"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"logout_other_devices\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{app_url}}/user/logout",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "user",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "profile",
+      "item": [
+        {
+          "name": "update",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"first_name\": \"Алексей\",\n    \"last_name\": \"Смирнов\",\n    \"patronymic\": \"Васильевич\",\n    \"timezone\": \"Asia/Tbilisi\",\n    \"contact_info\": \"test\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{app_url}}/profile/update",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "profile",
+                "update"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "payment",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"amount\": 10000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{app_url}}/payment/create",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "payment",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "namba_one",
+      "item": [
+        {
+          "name": "webhook",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"createdAt\": \"2025-10-08T13:56:13.951Z\", // дата создания запроса в формате ISO 8601\n    \"type\": \"PAYMENT_ORDER\", // тип вебхука\n    \"version\": \"string\", // версия API,\n    \"data\": {\n        \"guid\": \"string\", // guid платежа\n        \"externalId\": \"string\", // внешний идентификатор\n        \"channel\": \"string\", // с помощью чего была произведена оплата. Значения: 'BANK_CARD' | 'BALANCE'\n        \"paymentLinkGuid\": \"string\", // guid QR'а, по которому была проведена оплата\n        \"merchantAccountGuid\": \"string\", // ваш уникальный guid продавца,\n        \"currency\": \"KGS\",\n        \"amount\": \"string\", // сумма ордера\n        \"paymentAmount\": \"string\", // сумма, которую заплатил клиент\n        \"refundAmount\": \"0\", // сумма рефанда\n        \"remark\": \"string\", // ремарка платежа\n        \"customerGuid\": \"string\", // guid пользователя\n        \"maskedPhoneNumber\": \"string\", // замаскированный номер телефона\n        \"status\": \"string\", // статус платежна. Значения: 'COMPLETED' | 'CANCELED' | 'FAILED' | 'EXPIRED'\n        \"createdAt\": \"string\", // дата инициации оплаты в формате ISO 8601\n        \"settledAt\": \"string\" // дата перехода ордера в конечный статус в формате ISO 8601\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{app_url}}/namba_one/webhook",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "namba_one",
+                "webhook"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "kyc",
+      "item": [
+        {
+          "name": "submit_legal",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"general_information\": {\n    \"client_code\": \"123456\",\n    \"full_name_ru\": \"ООО \\\"Пример\\\"\",\n    \"short_name_ru\": \"ООО \\\"Пример\\\"\",\n    \"full_name_foreign\": \"Example LLC\",\n    \"short_name_foreign\": \"Example\",\n    \"legal_form\": \"ООО\"\n  },\n  \"representative_without_power_of_attorney\": {\n    \"name\": \"Иванов Иван Иванович\",\n    \"position\": \"Генеральный директор\",\n    \"document_basis\": \"Приказ №1\",\n    \"start_date\": \"2023-01-01\"\n  },\n  \"representative_with_power_of_attorney\": {\n    \"name\": \"Петров Петр Петрович\",\n    \"document_basis\": \"Доверенность №2\",\n    \"start_date\": \"2023-01-01\",\n    \"end_date\": \"2024-01-01\"\n  },\n  \"beneficiary\": {\n    \"name\": \"Сидоров Сергей Сергеевич\",\n    \"contract_number\": \"Д-12345\",\n    \"contract_date\": \"2022-06-15\"\n  },\n  \"beneficial_owner\": \"Сидоров Сергей Сергеевич\",\n  \"registration_and_tax_info\": {\n    \"country_of_registration\": \"Россия\",\n    \"inn_or_kpp\": \"7701234567\",\n    \"ogrn\": \"1122334455667\",\n    \"registration_date\": \"2010-05-12\",\n    \"issuing_authority\": \"Межрайонная ИФНС №46 по г. Москве\",\n    \"okpo\": \"12345678\",\n    \"bic\": \"044525225\"\n  },\n  \"has_registration_before_2002\": false,\n  \"addresses\": {\n    \"legal_address\": \"г. Москва, ул. Ленина, д. 1\",\n    \"postal_address\": \"г. Москва, ул. Ленина, д. 1\",\n    \"activity_location\": \"г. Москва, ул. Ленина, д. 1\"\n  },\n  \"contacts\": {\n    \"phone\": \"+7 (495) 123-45-67\",\n    \"fax\": \"+7 (495) 123-45-68\",\n    \"email\": \"contact@example.com\",\n    \"website\": \"https://www.example.com\"\n  },\n  \"license_data\": {\n    \"license_activity_type\": \"Брокерская деятельность\",\n    \"license_details\": \"Лицензия №12345 от 01.01.2020\"\n  },\n  \"structure_and_assets\": {\n    \"management_structure_info\": \"Совет директоров: Иванов И.И., Петров П.П.\",\n    \"assets_founders_trustees_info\": \"Учредители: Иванов И.И.\"\n  },\n  \"bank_info\": {\n    \"bank_details\": \"Банк \\\"Пример\\\" Р/с 40702810400000000001\",\n    \"has_accounts_in_terror_sponsor_banks\": false,\n    \"has_relations_with_non_managed_banks\": false,\n    \"is_info_disclosure_issuer\": true\n  },\n  \"fatca\": {\n    \"is_us_tax_resident\": false,\n    \"has_us_registration_or_postal_address\": false,\n    \"has_us_taxpayer_beneficiaries_or_controllers\": false,\n    \"has_us_phone_number\": false,\n    \"has_us_address_power_of_attorney\": false,\n    \"has_us_long_term_payment_instructions\": false\n  },\n  \"business_relationships\": {\n    \"relationship_purpose\": \"BROKER_SERVICE\",\n    \"relationship_type\": \"LONG_TERM\",\n    \"source_of_funds\": \"Вложение акционеров\",\n    \"business_reputation\": \"POSITIVE\",\n    \"financial_condition\": \"Устойчивое\"\n  },\n  \"legal_status\": {\n    \"liquidation_in_process\": false,\n    \"bankruptcy_in_process\": false,\n    \"has_court_bankruptcy_decisions\": false,\n    \"has_default_facts\": false,\n    \"agency_ratings\": \"AAA\"\n  },\n  \"consents\": {\n    \"personal_data_processing_consent\": true,\n    \"information_veracity_confirmation\": true,\n    \"fatca_consent\": false\n  }\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{app_url}}/kyc/submit_legal",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "kyc",
+                "submit_legal"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "submit_individual_basic",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"Иван\",\n  \"last_name\": \"Петров\",\n  \"middle_name\": \"Алексеевич\",\n  \"document_name\": \"Паспорт\",\n  \"document_series\": \"1234\",\n  \"document_number\": \"567890\",\n  \"document_issue_date\": \"2020-01-15\",\n  \"document_expiry_date\": \"2030-01-15\",\n  \"document_issuing_authority\": \"ОВД г. Москва\",\n  \"citizenship\": [\"Россия\"]\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{app_url}}/kyc/submit_individual_basic",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "kyc",
+                "submit_individual_basic"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "submit_individual_full",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"first_name\": \"Иван\",\n    \"last_name\": \"Иванов\",\n    \"middle_name\": \"Иванович\",\n    \"document_name\": \"Паспорт гражданина Российской Федерации\",\n    \"document_series\": \"4509\",\n    \"document_number\": \"123456\",\n    \"document_issue_date\": \"2015-05-20\",\n    \"document_expiry_date\": \"2025-05-20\",\n    \"document_issuing_authority\": \"ОУФМС России по г. Москве\",\n    \"citizenship\": [\n        \"Россия\"\n    ],\n    \"contact_info\": {\n        \"phone_number\": \"+7 (495) 123-45-67\",\n        \"fax\": \"+7 (495) 765-43-21\",\n        \"email\": \"ivanov@example.com\",\n        \"additional_contact_info\": \"Дополнительная контактная информация\"\n    },\n    \"stay_permit\": {\n        \"document_name\": \"Вид на жительство\",\n        \"series\": \"5678\",\n        \"number\": \"87654321\",\n        \"start_date\": \"2020-01-01\",\n        \"end_date\": \"2030-01-01\"\n    },\n    \"representative\": {\n        \"full_name_or_entity\": \"ООО Представитель\",\n        \"basis_document\": \"Доверенность\",\n        \"start_of_authority\": \"2023-01-01\",\n        \"end_of_authority\": \"2024-01-01\"\n    },\n    \"beneficial_owner\": {\n        \"full_name\": \"Иванов Петр Иванович\"\n    },\n    \"beneficiary\": {\n        \"full_name_or_entity\": \"ЗАО Бенефициар\",\n        \"contract_number\": \"BNF-123456\",\n        \"contract_date\": \"2023-03-01\"\n    },\n    \"pep\": {\n        \"position\": \"Депутат\",\n        \"employer\": \"Государственная Дума\",\n        \"employer_address\": \"Москва, ул. Охотный Ряд, д. 1\"\n    },\n    \"pep_relative\": {\n        \"relationship_degree\": \"Брат\",\n        \"full_name\": \"Иванов Сергей Иванович\",\n        \"position\": \"Министр\"\n    },\n    \"us_taxpayer_indicators\": {\n        \"us_citizenship\": false,\n        \"has_green_card\": false,\n        \"birth_country_is_us\": false,\n        \"physical_or_registered_or_mailing_address_in_us\": false,\n        \"care_of_or_held_mail_address_in_us\": false,\n        \"contact_phone_in_us\": false,\n        \"long_term_payment_instructions_to_us_account\": false,\n        \"power_of_attorney_to_person_with_us_address\": false\n    },\n    \"business_relationship\": {\n        \"purpose_of_relationship\": [\n            \"Инвестиции\",\n            \"Торговля\"\n        ],\n        \"nature_of_relationship\": \"Партнёрство\",\n        \"financial_business_activity_goals\": \"Расширение бизнеса\",\n        \"financial_status\": \"Устойчивое\",\n        \"business_reputation\": \"Отличная\",\n        \"sources_of_funds\": [\n            \"Инвестиции\",\n            \"Доходы от бизнеса\"\n        ]\n    },\n    \"user_consent_data\": {\n        \"personal_data_processing_consent\": true,\n        \"information_accuracy_confirmation\": true,\n        \"fatca_consent\": false\n    },\n    \"tax_number\": \"14214\",\n    \"tax_residence\": {\n        \"is_kyrgyzstan_resident\": true,\n        \"tax_residency_in_other_countries\": [\n            {\n                \"country\": \"Georgia\",\n                \"tax_number\": \"919238174\"\n            }\n        ]\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{app_url}}/kyc/submit_individual_full",
+              "host": [
+                "{{app_url}}"
+              ],
+              "path": [
+                "kyc",
+                "submit_individual_full"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "admin",
+      "item": [
+        {
+          "name": "user",
+          "item": [
+            {
+              "name": "list",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{app_url}}/admin/user/list?page=1&per_page=10",
+                  "host": [
+                    "{{app_url}}"
+                  ],
+                  "path": [
+                    "admin",
+                    "user",
+                    "list"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "get",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{app_url}}/admin/user/get?id=2",
+                  "host": [
+                    "{{app_url}}"
+                  ],
+                  "path": [
+                    "admin",
+                    "user",
+                    "get"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "ban",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": 1,\n    \"reason\": \"test\"\n} ",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{app_url}}/admin/user/ban",
+                  "host": [
+                    "{{app_url}}"
+                  ],
+                  "path": [
+                    "admin",
+                    "user",
+                    "ban"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "unban",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": 2\n} ",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{app_url}}/admin/user/ban",
+                  "host": [
+                    "{{app_url}}"
+                  ],
+                  "path": [
+                    "admin",
+                    "user",
+                    "ban"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "kyc",
+          "item": [
+            {
+              "name": "list",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{app_url}}/admin/kyc/list?type=legal&page=1&per_page=10&statuses[0]=created",
+                  "host": [
+                    "{{app_url}}"
+                  ],
+                  "path": [
+                    "admin",
+                    "kyc",
+                    "list"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "legal"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "statuses[0]",
+                      "value": "created"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "get",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{app_url}}/admin/kyc/get?type=legal&id=2",
+                  "host": [
+                    "{{app_url}}"
+                  ],
+                  "path": [
+                    "admin",
+                    "kyc",
+                    "get"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "legal"
+                    },
+                    {
+                      "key": "id",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "set_status",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": 2,\n    \"type\": \"legal\",\n    \"status\": \"approvedd\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{app_url}}/admin/kyc/set_status",
+                  "host": [
+                    "{{app_url}}"
+                  ],
+                  "path": [
+                    "admin",
+                    "kyc",
+                    "set_status"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "app_url",
+      "value": "https://api.ackgt.ru",
+      "type": "string"
+    },
+    {
+      "key": "two_factor_code",
+      "value": 111111,
+      "type": "string"
+    },
+    {
+      "key": "registration_code_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "login_code_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}

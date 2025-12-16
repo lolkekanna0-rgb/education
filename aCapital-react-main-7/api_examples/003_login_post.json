@@ -1,0 +1,9 @@
+{
+  "success": false,
+  "error": {
+    "code": "E_INVALID_CREDENTIALS",
+    "messages": [
+      "Invalid credentials"
+    ]
+  }
+}

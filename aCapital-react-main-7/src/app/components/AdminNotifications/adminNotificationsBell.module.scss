@@ -1,0 +1,142 @@
+.notificationBell {
+  position: relative;
+}
+
+.bellButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.bellButton:hover {
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+
+.bellLabel {
+  font-weight: 600;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.bellBadge {
+  background: #ff4d4f;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  min-width: 32px;
+  text-align: center;
+}
+
+.bellBadgeMuted {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.notificationDropdown {
+  position: absolute;
+  right: 0;
+  top: 110%;
+  width: 360px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 5;
+}
+
+.notificationHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.notificationError {
+  color: #ff4d4f;
+  font-size: 13px;
+}
+
+.notificationEmpty {
+  color: var(--text-light-gray, #6f6f6f);
+  font-size: 13px;
+}
+
+.notificationList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 320px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.notificationItem {
+  border: 1px solid #f1f5f9;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.notificationItemTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.notificationType {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.notificationDate {
+  color: var(--text-light-gray, #6f6f6f);
+  font-size: 12px;
+}
+
+.notificationMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.notificationStrong {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.notificationHint {
+  color: var(--text-light-gray, #6f6f6f);
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .bellButton {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .notificationDropdown {
+    position: relative;
+    width: 100%;
+    top: 8px;
+  }
+}

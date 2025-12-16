@@ -1,0 +1,9 @@
+{
+  "name": "aclc-monorepo",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "dev:frontend": "npm run dev --prefix aCapital-react-main-7",
+    "dev:backend": "npm run dev --prefix epic_backend-main"
+  }
+}

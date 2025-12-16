@@ -1,0 +1,151 @@
+.dashbord__top {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 100%;
+}
+
+.dashbord__white {
+    width: 65%;
+    border-radius: 16px;
+    padding: 40px 40px;
+    height: auto;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.dashbord__white__image {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    max-width: 240px;
+}
+
+.dashbord__white__image img {
+    position: static;
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+.dashbord__white__info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.dashbord__white__text {
+    font-weight: 400;
+    font-size: 16px;
+    color: #666;
+}
+
+.dashbord__white__sum {
+    font-weight: 700;
+    font-size: 36px;
+    color: #000;
+}
+
+.dashbord__btn {
+     box-shadow: 0 4px 8px 0 rgba(229, 105, 105, 0.25);
+background: var(--red-50);
+    border-radius: 6px;
+    padding: 0px 36px;
+    height: 60px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    width: 255px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.dashbord__red {
+    width: 35%;
+    border-radius: 16px;
+    padding: 40px 40px;
+    height: auto;
+    box-shadow: 3px 6px 50px 0 rgba(155, 155, 155, 0.05), 21px 0 64px 0 rgba(213, 213, 213, 0.05);
+    background: var(--red-50);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashbord__red__text {
+    font-weight: 500;
+    font-size: 19px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.dashbord__red__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 125%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #fff;
+}
+
+.dashbord__btn__white {
+     box-shadow: 0 4px 8px 0 rgba(229, 105, 105, 0.25);
+    background: #fff;
+    border-radius: 6px;
+    padding: 0px 36px;
+    height: 60px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    width: 100%;
+    color: var(--red-50);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+@media (max-width: 600px) {
+    .dashbord__top {
+        flex-direction: column;
+        padding: 24px;
+    }
+    .dashbord__white {
+        width: 100%;
+        padding: 24px 24px;
+    }
+    .dashbord__white__image {
+        display: none;
+    }
+    .dashbord__red {
+        width: 100%;
+        padding: 24px 24px;
+    }
+    .dashbord__white__info {
+        width: 100%;
+        flex: unset;
+    }
+    .dashbord__btn {
+        width: 100%;
+        margin-top: 40px;
+    }
+    .dashbord__btn__white {
+        margin-top: 40px;
+    }
+}
