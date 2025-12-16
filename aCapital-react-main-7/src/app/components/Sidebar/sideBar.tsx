@@ -86,7 +86,7 @@ export default function Sidebar() {
           </Link>
         </div>
         {menuItems.map(({ href, label, icon, children }) => {
-          const isActive = href ? pathEquals(href, pathname) : false;
+          const isActive = href ? pathEquals(href, pathname) || pathname.startsWith(`${normalizePath(href)}/`) : false;
           const hasChildren = Boolean(children && children.length > 0);
           const isGroupOpen = hasChildren ? Boolean(openGroups[label]) : false;
           const isGroupActive = hasChildren

@@ -1,0 +1,250 @@
+.educationCard {
+  width: 936px;
+  min-height: 348px;
+  background: rgba(255, 255, 255, 1);
+  padding: 40px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 125%;
+  color: var(--gray-dark);
+  margin: 0;
+  margin-bottom: 32px;
+}
+
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+  width: 856px;
+  height: 130px;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 125%;
+  color: rgba(148, 163, 184, 1);
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.testButton {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  width: 135px;
+  height: 44px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 125%;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  align-self: flex-start;
+  margin-top: auto;
+  box-shadow: 0 4px 8px 0 rgba(229, 105, 105, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testButton:hover {
+  background: #dc2626;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: auto;
+}
+
+.backButton {
+  background: #fff;
+  color: #ef4444;
+  border: 1px solid #ef4444;
+  border-radius: 6px;
+  width: 91px;
+  height: 44px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 125%;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backButton:hover {
+  background: #fef2f2;
+}
+
+.startTestButton {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  width: 135px;
+  height: 44px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 125%;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 4px 8px 0 rgba(229, 105, 105, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.startTestButton:hover {
+  background: #dc2626;
+}
+
+.testCard {
+  width: 936px;
+  min-height: 414px;
+  background: rgba(255, 255, 255, 1);
+  padding: 40px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px ;
+}
+
+.progressContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+
+.questionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.progressBar {
+  width: 856px;
+  height: 20px;
+  background: rgba(241, 245, 249, 1);
+  border: 1px solid rgba(226, 232, 240, 1);
+  border-radius: 20px;
+  box-shadow: 0 1px 3px 0 rgba(207, 207, 207, 0.25);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.progressText {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-dark);
+  position: absolute;
+  z-index: 1;
+}
+
+.progressFill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #ef4444;
+  transition: width 0.3s ease;
+  border-radius: 20px;
+}
+
+.questionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.questionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 125%;
+  color: var(--gray-dark);
+  margin: 0;
+}
+
+.answersContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.answerOption {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.radioInput {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.answerText {
+  font-size: 14px;
+  line-height: 140%;
+  color: var(--gray-dark);
+  flex: 1;
+}
+
+.questionButtonsContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.nextQuestionButton {
+  background: rgba(255, 255, 255, 1);
+  color: rgba(148, 163, 184, 1);
+  border: 1px solid rgba(226, 232, 240, 1);
+  border-radius: 6px;
+  width: 188px;
+  height: 44px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 125%;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 3px 0 rgba(229, 105, 105, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nextQuestionButton:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+.nextQuestionButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
