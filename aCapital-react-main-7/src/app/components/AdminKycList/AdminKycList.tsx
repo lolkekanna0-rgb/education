@@ -413,12 +413,40 @@ export default function AdminKycList({
         if (!res.ok) throw new Error("download_failed");
         const blob = await res.blob();
         const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
+        const url = URL.createObjectURL(blob);
+        link.href = url;
         link.download = filename || "attachment";
+        link.style.display = "none";
+        
+        // Проверяем, что document.body существует
+        if (!document.body) {
+          URL.revokeObjectURL(url);
+          throw new Error("Document body not available");
+        }
+        
         document.body.appendChild(link);
-        link.click();
-        link.remove();
-        URL.revokeObjectURL(link.href);
+        
+        // Используем requestAnimationFrame для гарантии, что элемент добавлен
+        requestAnimationFrame(() => {
+          link.click();
+          
+          // Удаляем элемент асинхронно после клика
+          setTimeout(() => {
+            try {
+              // Проверяем, что элемент все еще существует и находится в DOM
+              if (link && link.parentNode && link.parentNode === document.body) {
+                document.body.removeChild(link);
+              } else if (link && link.parentNode) {
+                link.remove();
+              }
+            } catch (error) {
+              // Игнорируем ошибки при удалении элемента
+              console.warn("Failed to remove download link:", error);
+            } finally {
+              URL.revokeObjectURL(url);
+            }
+          }, 200);
+        });
       } catch {
         window.open(absoluteUrl, "_blank");
       }

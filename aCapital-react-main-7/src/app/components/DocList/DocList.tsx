@@ -130,10 +130,37 @@ const DocumentsList = () => {
       const link = globalThis.document.createElement("a");
       link.href = url;
       link.download = doc.name || `document-${doc.id}.docx`;
+      link.style.display = "none";
+      
+      // Проверяем, что document.body существует
+      if (!globalThis.document.body) {
+        URL.revokeObjectURL(url);
+        throw new Error("Document body not available");
+      }
+      
       globalThis.document.body.appendChild(link);
-      link.click();
-      globalThis.document.body.removeChild(link);
-      URL.revokeObjectURL(url);
+      
+      // Используем requestAnimationFrame для гарантии, что элемент добавлен
+      requestAnimationFrame(() => {
+        link.click();
+        
+        // Удаляем элемент асинхронно после клика
+        setTimeout(() => {
+          try {
+            // Проверяем, что элемент все еще существует и находится в DOM
+            if (link && link.parentNode && link.parentNode === globalThis.document.body) {
+              globalThis.document.body.removeChild(link);
+            } else if (link && link.parentNode) {
+              link.remove();
+            }
+          } catch (error) {
+            // Игнорируем ошибки при удалении элемента
+            console.warn("Failed to remove download link:", error);
+          } finally {
+            URL.revokeObjectURL(url);
+          }
+        }, 200);
+      });
       setDownloadState({ id: null, error: "" });
     } catch (error) {
       const message = error instanceof Error ? parseError(error) : "Не удалось скачать документ.";

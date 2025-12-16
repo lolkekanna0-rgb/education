@@ -125,8 +125,37 @@ export default function AdminTemplates() {
       const anchor = document.createElement("a");
       anchor.href = url;
       anchor.download = tpl.name;
-      anchor.click();
-      URL.revokeObjectURL(url);
+      anchor.style.display = "none";
+      
+      // Проверяем, что document.body существует
+      if (!document.body) {
+        URL.revokeObjectURL(url);
+        throw new Error("Document body not available");
+      }
+      
+      document.body.appendChild(anchor);
+      
+      // Используем requestAnimationFrame для гарантии, что элемент добавлен
+      requestAnimationFrame(() => {
+        anchor.click();
+        
+        // Удаляем элемент асинхронно после клика
+        setTimeout(() => {
+          try {
+            // Проверяем, что элемент все еще существует и находится в DOM
+            if (anchor && anchor.parentNode && anchor.parentNode === document.body) {
+              document.body.removeChild(anchor);
+            } else if (anchor && anchor.parentNode) {
+              anchor.remove();
+            }
+          } catch (error) {
+            // Игнорируем ошибки при удалении элемента
+            console.warn("Failed to remove download anchor:", error);
+          } finally {
+            URL.revokeObjectURL(url);
+          }
+        }, 200);
+      });
     } catch (err) {
       setError(parseError(err as Error));
     }
