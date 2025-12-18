@@ -68,8 +68,8 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  width: 300px;
-  min-width: 300px;
+  width: 228px;
+  min-width: 228px;
 }
 
 .main__red {

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "../../../../page.module.css";
 import educationStyles from "../../education.module.scss";
@@ -10,13 +11,22 @@ import { AuthGuard } from "@/app/guards/AuthGuard/AuthGuard";
 
 export default function TestResults() {
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleBackToEducation = () => {
-    router.push("/pages/education");
+    router.push("/pages/education/dashboard");
   };
 
   // Здесь можно получить уровень обучения из API или состояния
   const learningLevel = "Начальный"; // Временно, потом из API
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <AuthGuard>
