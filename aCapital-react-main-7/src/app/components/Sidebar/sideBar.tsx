@@ -123,7 +123,7 @@ export default function Sidebar() {
                     <div className={styles.submenu}>
                       {label === "Обучение" ? (
                         <Link
-                          href="/pages/education/dashboard"
+                          href="/pages/education/achievements"
                           className={styles.achievementsButton}
                         >
                           <span>Мои достижения</span>

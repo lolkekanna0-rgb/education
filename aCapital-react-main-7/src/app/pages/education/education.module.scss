@@ -964,3 +964,81 @@
 .videoDescriptionText p:last-child {
   margin-bottom: 0;
 }
+
+.completedCoursesTitle {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 125%;
+  color: var(--gray-dark);
+  margin: 0;
+}
+
+.completedCoursesContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.completedCourseCard {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 90px;
+  padding: 16px;
+  background: #f1f5f9;
+  border-radius: 16px;
+}
+
+.completedCourseTopRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.completedCourseLeftContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1;
+}
+
+.completedCourseIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.completedCourseTitle {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 125%;
+  color: var(--gray-dark);
+}
+
+.completedCourseDate {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 125%;
+  color: rgba(148, 163, 184, 1);
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+.certificatesContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.certificateCard {
+  width: 250px;
+  min-height: 97px;
+  border-radius: 16px;
+  padding: 16px;
+  background: rgba(241, 245, 249, 1);
+}

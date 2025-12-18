@@ -254,6 +254,21 @@ a.secondary {
   font-size: 20px;
 }
 
+.achievementsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page_contents__5Jv7v {
+  width: 100%;
+  max-width: 1616px;
+  min-height: 192px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 1);
+  padding: 24px 40px;
+}
+
 @media (max-width: 780px) {
   .contents {
     width: 100%;
