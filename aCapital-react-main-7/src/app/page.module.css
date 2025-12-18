@@ -23,7 +23,7 @@
 
 .contents {
   width: 100%;
-  padding-right: 38px;
+  padding: 0px 38px 0px 0px;
   flex: 1;
   min-height: 100vh;
   height: auto;
@@ -257,7 +257,7 @@ a.secondary {
 @media (max-width: 780px) {
   .contents {
     width: 100%;
-    padding-right: 38px;
+    padding: 0px 38px 0px 0px;
     flex: 1;
     height: 100%;
     overflow-y: auto;
@@ -308,7 +308,7 @@ a.secondary {
     display: none;
   }
   .contents {
-    padding-right: 0;
+    padding: 0px 38px 0px 0px;
   }
 }
 

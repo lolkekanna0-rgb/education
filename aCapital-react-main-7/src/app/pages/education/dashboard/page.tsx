@@ -22,6 +22,10 @@ export default function EducationDashboard() {
     router.push("/pages/education/test");
   };
 
+  const handleVideoClick = (videoId: string) => {
+    router.push(`/pages/education/video?id=${videoId}`);
+  };
+
   // Здесь можно получить данные из API
   const learningLevel = "Начальный"; // Временно, потом из API
   const learningProgress = 63; // Временно, потом из API
@@ -213,7 +217,10 @@ export default function EducationDashboard() {
                     Видео-материалы для обучения
                   </span>
                   <div className={educationStyles.testsRectanglesContainer}>
-                    <div className={educationStyles.testVideoItem}>
+                    <div
+                      className={educationStyles.testVideoItem}
+                      onClick={() => handleVideoClick("1")}
+                    >
                       <div
                         className={
                           educationStyles.testVideoRectangleImgContainer
@@ -234,7 +241,10 @@ export default function EducationDashboard() {
                         Основы инвестирования: видео-урок
                       </span>
                     </div>
-                    <div className={educationStyles.testVideoItem}>
+                    <div
+                      className={educationStyles.testVideoItem}
+                      onClick={() => handleVideoClick("2")}
+                    >
                       <div
                         className={
                           educationStyles.testVideoRectangleImgContainer

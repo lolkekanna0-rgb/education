@@ -21,6 +21,7 @@
   color: #4b5563; /* gray-700 */
   transition: background-color 0.2s, color 0.2s;
   cursor: pointer;
+  position: relative;
 }
 
 .menuItem_profile {
@@ -85,6 +86,21 @@
   fill: #ffffff;
 }
 
+.arrowIcon {
+  margin-left: auto;
+  flex-shrink: 0;
+  color: #000;
+  transition: transform 0.2s ease;
+}
+
+.arrowIconOpen {
+  transform: rotate(90deg);
+}
+
+.arrowIconActive {
+  color: #fff;
+}
+
 
 .menuButton {
   width: 100%;
@@ -121,6 +137,33 @@
 
 .subItem:hover {
   background: #f5f5f5;
+}
+
+.achievementsButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 18px;
+  background: #ef4444;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 125%;
+  margin-bottom: 10px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.achievementsButton:hover {
+  background: #dc2626;
+}
+
+.achievementsArrow {
+  color: #fff;
+  flex-shrink: 0;
+  margin-left: auto;
 }
 
 .active {

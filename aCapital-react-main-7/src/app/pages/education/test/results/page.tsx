@@ -35,16 +35,28 @@ export default function TestResults() {
         <main className={styles.main__profile}>
           <div className={styles.containers}>
             <div className={styles.sidebar}>
-              <SideBar/>
+              <SideBar />
             </div>
             <div className={styles.contents}>
               <h1 className={styles.page__title}>Тест на квалификацию</h1>
               <div className={styles.content}>
                 <div className={educationStyles.resultCard}>
                   <div className={educationStyles.successIcon}>
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect width="80" height="80" rx="40" fill="#80C069"/>
-                      <path d="M28 40L36 48L52 32" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+                    <svg
+                      width="80"
+                      height="80"
+                      viewBox="0 0 80 80"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="80" height="80" rx="40" fill="#80C069" />
+                      <path
+                        d="M28 40L36 48L52 32"
+                        stroke="white"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </div>
                   <h2 className={educationStyles.resultTitle}>Тест сдан</h2>
@@ -56,7 +68,8 @@ export default function TestResults() {
                       Теперь вам доступны материалы для данного уровня обучения.
                     </p>
                     <p className={educationStyles.resultDescription}>
-                      Вы можете приступить к изучению в личном кабинете во вкладке "Обучение".
+                      Вы можете приступить к изучению в личном кабинете во
+                      вкладке "Обучение".
                     </p>
                   </div>
                   <button
@@ -76,4 +89,3 @@ export default function TestResults() {
     </AuthGuard>
   );
 }
-
