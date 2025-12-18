@@ -208,6 +208,104 @@ export default function EducationDashboard() {
                     </svg>
                   </div>
                 </div>
+                <div className={educationStyles.BlockWithTestVideo}>
+                  <span className={educationStyles.BlockWithText}>
+                    Видео-материалы для обучения
+                  </span>
+                  <div className={educationStyles.testsRectanglesContainer}>
+                    <div className={educationStyles.testVideoItem}>
+                      <div
+                        className={
+                          educationStyles.testVideoRectangleImgContainer
+                        }
+                      >
+                        <Image
+                          src={"/education-example-1.png"}
+                          width={500}
+                          height={500}
+                          alt="education video"
+                          className={educationStyles.testVideoRectangleImg}
+                        />
+                        <div className={educationStyles.testVideoItemTime}>
+                          12 мин.
+                        </div>
+                      </div>
+                      <span className={educationStyles.testVideoItemText}>
+                        Основы инвестирования: видео-урок
+                      </span>
+                    </div>
+                    <div className={educationStyles.testVideoItem}>
+                      <div
+                        className={
+                          educationStyles.testVideoRectangleImgContainer
+                        }
+                      >
+                        <Image
+                          src={"/education-example-2.png"}
+                          width={500}
+                          height={500}
+                          alt="education video"
+                          className={educationStyles.testVideoRectangleImg}
+                        />
+                        <div className={educationStyles.testVideoItemTime}>
+                          23 мин.
+                        </div>
+                      </div>
+                      <span className={educationStyles.testVideoItemText}>
+                        Криптокошелек и финансовые риски
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className={educationStyles.BlockWithPdfMaterials}>
+                  <span className={educationStyles.BlockWithText}>
+                    PDF-материалы для обучения
+                  </span>
+                  <div className={educationStyles.testsRectanglesContainer}>
+                    <div className={educationStyles.pdfItem}>
+                      <div className={educationStyles.pdfRectangleImgContainer}>
+                        <Image
+                          src={"/pdf-education.png"}
+                          width={500}
+                          height={500}
+                          alt="education pdf"
+                          className={educationStyles.pdfRectangleImg}
+                        />
+                      </div>
+                      <span className={educationStyles.pdfItemText}>
+                        Руководство по инвестированию
+                      </span>
+                    </div>
+                    <div className={educationStyles.pdfItem}>
+                      <div className={educationStyles.pdfRectangleImgContainer}>
+                        <Image
+                          src={"/pdf-education.png"}
+                          width={500}
+                          height={500}
+                          alt="education pdf"
+                          className={educationStyles.pdfRectangleImg}
+                        />
+                      </div>
+                      <span className={educationStyles.pdfItemText}>
+                        Основы финансового планирования
+                      </span>
+                    </div>
+                    <div className={educationStyles.pdfItem}>
+                      <div className={educationStyles.pdfRectangleImgContainer}>
+                        <Image
+                          src={"/pdf-education.png"}
+                          width={500}
+                          height={500}
+                          alt="education pdf"
+                          className={educationStyles.pdfRectangleImg}
+                        />
+                      </div>
+                      <span className={educationStyles.pdfItemText}>
+                        Анализ рынка ценных бумаг
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
