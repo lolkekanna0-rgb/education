@@ -7,6 +7,7 @@ import Header from "../../../components/Header/Header";
 import SideBar from "../../../components/Sidebar/sideBar";
 import Footer from "../../../components/Footer/Footer";
 import { AuthGuard } from "@/app/guards/AuthGuard/AuthGuard";
+import CertificateIcon from "../../../components/CertificateIcon/CertificateIcon";
 
 interface CompletedCourse {
   id: string;
@@ -55,8 +56,14 @@ export default function AchievementsPage() {
                         className={educationStyles.completedCourseCard}
                       >
                         <div className={educationStyles.completedCourseTopRow}>
-                          <div className={educationStyles.completedCourseLeftContent}>
-                            <div className={educationStyles.completedCourseIcon}>
+                          <div
+                            className={
+                              educationStyles.completedCourseLeftContent
+                            }
+                          >
+                            <div
+                              className={educationStyles.completedCourseIcon}
+                            >
                               <svg
                                 width="20"
                                 height="20"
@@ -64,12 +71,7 @@ export default function AchievementsPage() {
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
-                                <circle
-                                  cx="10"
-                                  cy="10"
-                                  r="10"
-                                  fill="#22C55E"
-                                />
+                                <circle cx="10" cy="10" r="10" fill="#22C55E" />
                                 <path
                                   d="M6 10L9 13L14 7"
                                   stroke="white"
@@ -79,7 +81,9 @@ export default function AchievementsPage() {
                                 />
                               </svg>
                             </div>
-                            <span className={educationStyles.completedCourseTitle}>
+                            <span
+                              className={educationStyles.completedCourseTitle}
+                            >
                               {course.title}
                             </span>
                           </div>
@@ -96,10 +100,30 @@ export default function AchievementsPage() {
                     Сертификаты
                   </h2>
                   <div className={educationStyles.certificatesContainer}>
-                    <div className={educationStyles.certificateCard}></div>
-                    <div className={educationStyles.certificateCard}></div>
-                    <div className={educationStyles.certificateCard}></div>
-                    <div className={educationStyles.certificateCard}></div>
+                    <div className={educationStyles.certificateCard}>
+                      <CertificateIcon />
+                      <p className={educationStyles.certificateText}>
+                        Сертификат "Курс Основы микрофинансов и аудита"
+                      </p>
+                    </div>
+                    <div className={educationStyles.certificateCard}>
+                      <CertificateIcon />
+                      <p className={educationStyles.certificateText}>
+                        Сертификат "Курс Основы микрофинансов и аудита"
+                      </p>
+                    </div>
+                    <div className={educationStyles.certificateCard}>
+                      <CertificateIcon />
+                      <p className={educationStyles.certificateText}>
+                        Сертификат "Курс Основы микрофинансов и аудита"
+                      </p>
+                    </div>
+                    <div className={educationStyles.certificateCard}>
+                      <CertificateIcon />
+                      <p className={educationStyles.certificateText}>
+                        Сертификат "Курс Основы микрофинансов и аудита"
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -111,4 +135,3 @@ export default function AchievementsPage() {
     </AuthGuard>
   );
 }
-

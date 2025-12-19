@@ -9,7 +9,6 @@
 .main__profile {
   background: #f1f5f9;
   min-height: 500px;
-
 }
 
 .containers {
@@ -120,10 +119,7 @@
   height: 48px;
   padding: 0 20px;
   border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -319,7 +315,7 @@ a.secondary {
     justify-content: center;
   }
 
-  .sidebar  {
+  .sidebar {
     display: none;
   }
   .contents {
