@@ -1061,34 +1061,6 @@
   flex: 1;
 }
 
-@media (max-width: 780px) {
-  .educationCard {
-    width: auto;
-    min-height: 340px;
-    padding: 24px;
-    margin: 0 24px;
-    box-sizing: border-box;
-  }
-
-  .descriptionContainer {
-    width: 100%;
-    height: auto;
-  }
-
-  .title {
-    font-size: 18px;
-    margin: 24px;
-  }
-
-  .testButton {
-    width: 264px;
-    height: 44px;
-  }
-  .contents {
-    padding: 0px;
-  }
-}
-
 // Стили для страниц education, перенесенные из page.module.css
 .page {
   // Базовый класс для страницы (может быть пустым, если стили задаются глобально)
@@ -1170,6 +1142,28 @@
 }
 
 @media (max-width: 780px) {
+  .educationCard {
+    width: auto;
+    min-height: 340px;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+
+  .descriptionContainer {
+    width: 100%;
+    height: auto;
+  }
+
+  .title {
+    font-size: 18px;
+    margin: 24px;
+  }
+
+  .testButton {
+    width: 264px;
+    height: 44px;
+  }
+
   .containers {
     gap: 0;
   }
@@ -1199,15 +1193,15 @@
     padding: 0px 24px 48px;
   }
 
-  .page_contents__5Jv7v {
-    padding: 24px 0 24px 24px;
-  }
   .title {
     margin: 0px;
     margin-bottom: 24px;
   }
   .testButton {
     width: 100%;
+  }
+  .page_contents__5Jv7v {
+    padding: 24px 0 24px 24px;
   }
   .buttonsContainer {
     gap: 10px;
@@ -1231,7 +1225,7 @@
   .questionContainer {
     margin-top: 8px;
     gap: 36px;
-    width: 264px;
+    width: 100%;
     justify-content: center;
     align-self: center;
     margin-left: auto;
@@ -1480,11 +1474,14 @@
     margin-top: 8px;
   }
   .videoPageContainer {
+    width: auto;
     height: auto;
     padding: 24px;
     gap: 24px;
     display: flex;
     flex-direction: column;
+    margin: 0 24px;
+    margin-bottom: 48px;
   }
   .videoPageHeader {
     flex-direction: column;
@@ -1541,19 +1538,18 @@
   .videoDescriptionText {
     font-size: 14px;
   }
-  .contents {
-    padding: 24px;
-  }
   .achievementsContainer {
     padding: 0;
     gap: 24px;
-  }
-  .page_contents__5Jv7v {
-    padding: 24px;
+    margin: 0 24px;
+    margin-bottom: 48px;
   }
   .completedCoursesTitle {
     font-size: 18px;
     margin-bottom: 16px;
+  }
+  .page_contents__5Jv7v {
+    padding: 24px;
   }
   .completedCoursesContainer {
     flex-direction: column;
