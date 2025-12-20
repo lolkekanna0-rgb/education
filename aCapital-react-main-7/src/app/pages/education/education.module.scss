@@ -1354,6 +1354,12 @@
   }
   .BlockWithTests {
     padding: 24px;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .BlockWithTests .arrowContainer {
+    display: none;
   }
   .BlockWithTests .testItem {
     position: relative;
@@ -1472,5 +1478,111 @@
   .testVideoItemText {
     font-size: 13px;
     margin-top: 8px;
+  }
+  .videoPageContainer {
+    height: auto;
+    padding: 24px;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .videoPageHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .videoPageHeader .backButton {
+    display: none;
+  }
+  .videoPageTitle {
+    font-size: 18px;
+    width: 100%;
+  }
+  .videoPageContent {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .videoPlayerContainer {
+    width: 100%;
+    height: 148.24px;
+  }
+  .videoPlayer {
+    width: 100%;
+    height: 100%;
+  }
+  .videoDescriptionContainer {
+    width: 100%;
+  }
+  .videoDescriptionTitle {
+    font-size: 18px;
+  }
+  .videoDescriptionText {
+    width: 100%;
+    font-size: 14px;
+  }
+  .backButtonMobile {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    background: #fff;
+    color: #ef4444;
+    border: 1px solid #ef4444;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    height: 44px;
+  }
+  .backButtonMobile:hover {
+    background: #fef2f2;
+  }
+  .videoDescriptionText {
+    font-size: 14px;
+  }
+  .contents {
+    padding: 24px;
+  }
+  .achievementsContainer {
+    padding: 0;
+    gap: 24px;
+  }
+  .page_contents__5Jv7v {
+    padding: 24px;
+  }
+  .completedCoursesTitle {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  .completedCoursesContainer {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .completedCourseCard {
+    width: 100%;
+    height: auto;
+    min-height: 80px;
+    gap: 16px;
+    box-sizing: border-box;
+    justify-content: space-between;
+  }
+  .completedCourseTopRow {
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+  }
+  .completedCourseDate {
+    flex-shrink: 0;
+    font-size: 12px;
+  }
+  .certificatesContainer {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .certificateCard {
+    width: 100%;
+    box-sizing: border-box;
   }
 }

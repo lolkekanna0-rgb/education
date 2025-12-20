@@ -99,6 +99,13 @@ export default function EducationVideo() {
                     </div>
                   </div>
                 </div>
+                <button
+                  className={educationStyles.backButtonMobile}
+                  type="button"
+                  onClick={handleBack}
+                >
+                  Назад
+                </button>
               </div>
             </div>
           </div>
