@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import styles from "../../../../page.module.css";
 import educationStyles from "../../education.module.scss";
 import Header from "../../../../components/Header/Header";
 import SideBar from "../../../../components/Sidebar/sideBar";
@@ -144,16 +143,16 @@ export default function TestQuestions() {
 
   return (
     <AuthGuard>
-      <div className={styles.page}>
+      <div className={educationStyles.page}>
         <Header />
-        <main className={styles.main__profile}>
-          <div className={styles.containers}>
-            <div className={styles.sidebar}>
+        <main className={educationStyles.main__profile}>
+          <div className={educationStyles.containers}>
+            <div className={educationStyles.sidebar}>
               <SideBar/>
             </div>
-            <div className={styles.contents}>
-              <h1 className={styles.page__title}>Тест на квалификацию</h1> 
-              <div className={styles.content}>
+            <div className={educationStyles.contents}>
+              <h1 className={educationStyles.page__title}>Тест на квалификацию</h1> 
+              <div className={educationStyles.content}>
                 <div className={educationStyles.testCard}>
                   <div className={educationStyles.progressContainer}>
                     <div className={educationStyles.progressBar}>

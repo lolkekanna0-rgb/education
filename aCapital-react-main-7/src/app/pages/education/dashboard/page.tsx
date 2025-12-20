@@ -2,13 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import styles from "../../../page.module.css";
 import educationStyles from "../education.module.scss";
 import Header from "../../../components/Header/Header";
 import SideBar from "../../../components/Sidebar/sideBar";
 import Footer from "../../../components/Footer/Footer";
 import { AuthGuard } from "@/app/guards/AuthGuard/AuthGuard";
 import Image from "next/image";
+import PdfIcon from "../../../../../public/pdfIcon";
 
 export default function EducationDashboard() {
   const router = useRouter();
@@ -36,15 +36,15 @@ export default function EducationDashboard() {
 
   return (
     <AuthGuard>
-      <div className={styles.page}>
+      <div className={educationStyles.page}>
         <Header />
-        <main className={styles.main__profile}>
-          <div className={styles.containers}>
-            <div className={styles.sidebar}>
+        <main className={educationStyles.main__profile}>
+          <div className={educationStyles.containers}>
+            <div className={educationStyles.sidebar}>
               <SideBar />
             </div>
-            <div className={styles.contents}>
-              <h1 className={styles.page__title}>Обучение</h1>
+            <div className={educationStyles.contents}>
+              <h1 className={educationStyles.page__title}>Обучение</h1>
               <div className={educationStyles.dashboardContainer}>
                 <div className={educationStyles.dashboardCardsContainer}>
                   <div className={educationStyles.levelCard}>
@@ -269,18 +269,12 @@ export default function EducationDashboard() {
                 </div>
                 <div className={educationStyles.BlockWithPdfMaterials}>
                   <span className={educationStyles.BlockWithText}>
-                    PDF-материалы для обучения
+                    Текстовые материалы для обучения
                   </span>
                   <div className={educationStyles.testsRectanglesContainer}>
                     <div className={educationStyles.pdfItem}>
                       <div className={educationStyles.pdfRectangleImgContainer}>
-                        <Image
-                          src={"/pdf-education.png"}
-                          width={500}
-                          height={500}
-                          alt="education pdf"
-                          className={educationStyles.pdfRectangleImg}
-                        />
+                        <PdfIcon />
                       </div>
                       <span className={educationStyles.pdfItemText}>
                         Руководство по инвестированию
@@ -288,13 +282,7 @@ export default function EducationDashboard() {
                     </div>
                     <div className={educationStyles.pdfItem}>
                       <div className={educationStyles.pdfRectangleImgContainer}>
-                        <Image
-                          src={"/pdf-education.png"}
-                          width={500}
-                          height={500}
-                          alt="education pdf"
-                          className={educationStyles.pdfRectangleImg}
-                        />
+                        <PdfIcon />
                       </div>
                       <span className={educationStyles.pdfItemText}>
                         Основы финансового планирования
@@ -302,13 +290,7 @@ export default function EducationDashboard() {
                     </div>
                     <div className={educationStyles.pdfItem}>
                       <div className={educationStyles.pdfRectangleImgContainer}>
-                        <Image
-                          src={"/pdf-education.png"}
-                          width={500}
-                          height={500}
-                          alt="education pdf"
-                          className={educationStyles.pdfRectangleImg}
-                        />
+                        <PdfIcon />
                       </div>
                       <span className={educationStyles.pdfItemText}>
                         Анализ рынка ценных бумаг

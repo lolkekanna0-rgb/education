@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import styles from "../../../page.module.css";
 import educationStyles from "../education.module.scss";
 import Header from "../../../components/Header/Header";
 import SideBar from "../../../components/Sidebar/sideBar";
@@ -21,24 +20,30 @@ export default function EducationTest() {
 
   return (
     <AuthGuard>
-      <div className={styles.page}>
+      <div className={educationStyles.page}>
         <Header />
-        <main className={styles.main__profile}>
-          <div className={styles.containers}>
-            <div className={styles.sidebar}>
-              <SideBar/>
+        <main className={educationStyles.main__profile}>
+          <div className={educationStyles.containers}>
+            <div className={educationStyles.sidebar}>
+              <SideBar />
             </div>
-            <div className={styles.contents}>
-              <h1 className={styles.page__title}>Тест на квалификацию</h1> 
-              <div className={styles.content}>
+            <div className={educationStyles.contents}>
+              <h1 className={educationStyles.page__title}>
+                Тест на квалификацию
+              </h1>
+              <div className={educationStyles.content}>
                 <div className={educationStyles.educationCard}>
-                  <h2 className={educationStyles.title}>Ваш текущий уровень обучения не определен</h2>
+                  <h2 className={educationStyles.title}>
+                    Ваш текущий уровень обучения не определен
+                  </h2>
                   <div className={educationStyles.descriptionContainer}>
                     <p className={educationStyles.description}>
-                      Чтобы приступить к прохождению теста, нажмите кнопку "Начать тест".
+                      Чтобы приступить к прохождению теста, нажмите кнопку
+                      "Начать тест".
                     </p>
                     <p className={educationStyles.description}>
-                      Данный тест предназначен для определения вашего уровня обучения в системе.
+                      Данный тест предназначен для определения вашего уровня
+                      обучения в системе.
                     </p>
                     <p className={educationStyles.description}>
                       Тест состоит из 10 вопросов.
@@ -51,15 +56,15 @@ export default function EducationTest() {
                     </p>
                   </div>
                   <div className={educationStyles.buttonsContainer}>
-                    <button 
-                      className={educationStyles.backButton} 
+                    <button
+                      className={educationStyles.backButton}
                       type="button"
                       onClick={handleBack}
                     >
                       Назад
                     </button>
-                    <button 
-                      className={educationStyles.startTestButton} 
+                    <button
+                      className={educationStyles.startTestButton}
                       type="button"
                       onClick={handleStartTest}
                     >
@@ -76,4 +81,3 @@ export default function EducationTest() {
     </AuthGuard>
   );
 }
-

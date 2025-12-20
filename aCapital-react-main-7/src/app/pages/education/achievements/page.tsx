@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import styles from "../../../page.module.css";
 import educationStyles from "../education.module.scss";
 import Header from "../../../components/Header/Header";
 import SideBar from "../../../components/Sidebar/sideBar";
@@ -35,17 +34,17 @@ export default function AchievementsPage() {
 
   return (
     <AuthGuard>
-      <div className={styles.page}>
+      <div className={educationStyles.page}>
         <Header />
-        <main className={styles.main__profile}>
-          <div className={styles.containers}>
-            <div className={styles.sidebar}>
+        <main className={educationStyles.main__profile}>
+          <div className={educationStyles.containers}>
+            <div className={educationStyles.sidebar}>
               <SideBar />
             </div>
-            <div className={styles.contents}>
-              <h1 className={styles.page__title}>Мои достижения</h1>
-              <div className={styles.achievementsContainer}>
-                <div className={styles.page_contents__5Jv7v}>
+            <div className={educationStyles.contents}>
+              <h1 className={educationStyles.page__title}>Мои достижения</h1>
+              <div className={educationStyles.achievementsContainer}>
+                <div className={educationStyles.page_contents__5Jv7v}>
                   <h2 className={educationStyles.completedCoursesTitle}>
                     Пройденные курсы
                   </h2>
@@ -95,7 +94,7 @@ export default function AchievementsPage() {
                     ))}
                   </div>
                 </div>
-                <div className={styles.page_contents__5Jv7v}>
+                <div className={educationStyles.page_contents__5Jv7v}>
                   <h2 className={educationStyles.completedCoursesTitle}>
                     Сертификаты
                   </h2>

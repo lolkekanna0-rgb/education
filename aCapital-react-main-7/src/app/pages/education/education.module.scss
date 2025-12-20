@@ -350,7 +350,7 @@
   color: #ef4444;
   border: 1px solid #ef4444;
   border-radius: 6px;
-  width: 188px;
+  width: 100%;
   height: 44px;
   padding: 0;
   font-size: 14px;
@@ -473,7 +473,7 @@
 
 .levelCard {
   width: 100%;
-  min-height: 188px;
+  min-height: 100%;
   background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
   padding: 40px;
   border-radius: 16px;
@@ -514,7 +514,7 @@
 
 .progressCard {
   width: 100%;
-  min-height: 188px;
+  min-height: 100%;
   background: rgba(255, 255, 255, 1);
   padding: 40px;
   border-radius: 16px;
@@ -613,7 +613,7 @@
 
 .testCard {
   width: 100%;
-  min-height: 188px;
+  min-height: 100%;
   background: rgba(255, 255, 255, 1);
   padding: 40px;
   border-radius: 16px;
@@ -655,7 +655,7 @@
 }
 .BlockWithTests {
   width: 100%;
-  height: 282px;
+  height: 100%;
   background: rgba(255, 255, 255, 1);
   padding: 24px 40px;
   border-radius: 16px;
@@ -678,14 +678,14 @@
 .testItem {
   display: flex;
   flex-direction: column;
-  max-width: 250px;
+  max-width: 100%;
   width: 100%;
 }
 .testVideoItem {
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 245px;
+  height: 100%;
   cursor: pointer;
   transition: opacity 0.2s;
 }
@@ -812,6 +812,11 @@
   height: 100%;
   max-height: 144px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  background: rgba(241, 245, 249, 1);
 }
 
 .pdfRectangleImg {
@@ -1054,4 +1059,418 @@
   color: var(--gray-dark);
   margin: 0;
   flex: 1;
+}
+
+@media (max-width: 780px) {
+  .educationCard {
+    width: auto;
+    min-height: 340px;
+    padding: 24px;
+    margin: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .descriptionContainer {
+    width: 100%;
+    height: auto;
+  }
+
+  .title {
+    font-size: 18px;
+    margin: 24px;
+  }
+
+  .testButton {
+    width: 264px;
+    height: 44px;
+  }
+  .contents {
+    padding: 0px;
+  }
+}
+
+// Стили для страниц education, перенесенные из page.module.css
+.page {
+  // Базовый класс для страницы (может быть пустым, если стили задаются глобально)
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main__profile {
+  background: #f1f5f9;
+  min-height: 500px;
+}
+
+.containers {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  min-height: 500px;
+  height: 100%;
+  align-items: flex-start;
+}
+
+.sidebar {
+  background: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 228px;
+  min-width: 228px;
+}
+
+.contents {
+  width: 100%;
+  padding: 0px 38px 0px 0px;
+  flex: 1;
+  min-height: 100vh;
+  height: auto;
+  overflow-y: visible;
+  min-width: 0;
+}
+
+.page__title {
+  font-weight: 700;
+  text-align: left;
+  font-size: 30px;
+  line-height: 133%;
+  color: var(--gray-dark);
+  padding: 38px 38px 40px 0px;
+}
+
+.content {
+  background: #f1f5f9;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.achievementsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page_contents__5Jv7v {
+  width: 100%;
+  max-width: 1616px;
+  min-height: 192px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 1);
+  padding: 24px 40px;
+}
+.retakeTestButton {
+  z-index: 100;
+}
+.progressBarContainer {
+  z-index: 100;
+}
+
+@media (max-width: 780px) {
+  .containers {
+    gap: 0;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .contents {
+    width: 100%;
+    padding: 0px;
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .page__title {
+    font-size: 24px;
+    padding: 32px 24px 24px 24px;
+  }
+
+  .content {
+    display: block;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0px 24px 48px;
+  }
+
+  .page_contents__5Jv7v {
+    padding: 24px 0 24px 24px;
+  }
+  .title {
+    margin: 0px;
+    margin-bottom: 24px;
+  }
+  .testButton {
+    width: 100%;
+  }
+  .buttonsContainer {
+    gap: 10px;
+  }
+  .backButton {
+    width: 127px;
+  }
+  .startTestButton {
+    width: 127px;
+  }
+  .progressBar {
+    width: 100%;
+  }
+  .questionButtonsContainer {
+    justify-content: center;
+  }
+  .testCard {
+    padding: 24px;
+    height: 100%;
+  }
+  .questionContainer {
+    margin-top: 8px;
+    gap: 36px;
+    width: 264px;
+    justify-content: center;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .questionTitle {
+    font-size: 13px;
+  }
+  .answersContainer {
+    gap: 8px;
+  }
+  .answerOption {
+    gap: 8px;
+  }
+  .questionButtonsContainer {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .previousQuestionButton {
+    width: 100%;
+    order: 2;
+  }
+  .nextQuestionButton {
+    width: 100%;
+    order: 1;
+  }
+  .resultCard {
+    width: 100%;
+    padding: 40px 24px;
+    height: 100%;
+  }
+  .successIcon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+  }
+  .resultTitle {
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+  .resultLevel {
+    font-size: 18px;
+    line-height: 125%;
+  }
+  .resultDescriptionContainer {
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 140%;
+  }
+  .backToEducationButton {
+    margin-top: 40px;
+  }
+  .resultDescription {
+    font-size: 12px;
+  }
+  .dashboardCardsContainer {
+    flex-direction: column;
+  }
+  .testsRectanglesContainer {
+    flex-direction: row;
+  }
+  .levelCard {
+    width: 100%;
+    height: 158px;
+    box-sizing: border-box;
+    padding: 24px;
+  }
+  .levelCardImg {
+    width: 135px;
+    height: 102px;
+  }
+  .progressCard {
+    width: 100%;
+    height: 123px;
+    box-sizing: border-box;
+    padding: 24px;
+  }
+  .testCard {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .dashboardCardsContainer {
+    gap: 12px;
+  }
+  .progressBarImg {
+    right: -9.28px;
+    top: 5.37px;
+    width: 150px;
+    height: 161px;
+  }
+  .progressBarWrapper {
+    width: 264px;
+    height: 28px;
+  }
+  .progressBarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .progressCardTitle {
+    font-size: 18px;
+  }
+  .dashboardContainer {
+    padding: 0px 24px 48px;
+  }
+  .testCardImg {
+    width: 188px;
+    height: 188px;
+    right: -35.8px;
+    top: -14.75px;
+  }
+  .retakeTestButton {
+    width: 100%;
+    height: 44px;
+  }
+  .testCardTitle {
+    font-size: 18px;
+  }
+  .BlockWithTests {
+    padding: 24px;
+  }
+  .BlockWithTests .testItem {
+    position: relative;
+    max-width: 100%;
+  }
+  .BlockWithTests .testRectangle {
+    width: 100%;
+    height: 80px;
+    padding: 15.74px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+  }
+  .BlockWithTests .testRectangleImg {
+    width: 41.94px;
+    height: 48.51px;
+    flex-shrink: 0;
+  }
+  .BlockWithTests .testItemText {
+    font-size: 13px;
+    margin-top: 0;
+    position: absolute;
+    left: 68px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-dark);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .BlockWithTests .testsRectanglesContainer {
+    gap: 8px;
+    flex-direction: column;
+  }
+  .testVideoRectangleImg {
+    width: 100%;
+    height: 100%;
+  }
+  .BlockWithText {
+    font-size: 18px;
+  }
+  .BlockWithTestVideo {
+    padding: 24px 0px 24px 24px;
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+  .testsRectanglesContainer {
+    flex-direction: row;
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .testsRectanglesContainer::-webkit-scrollbar {
+    display: none;
+  }
+  .BlockWithPdfMaterials {
+    padding: 24px;
+  }
+  .BlockWithPdfMaterials .testsRectanglesContainer {
+    flex-direction: column;
+    overflow-x: visible;
+    overflow-y: visible;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .BlockWithPdfMaterials .pdfItem {
+    flex-direction: row;
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+    min-height: 80px;
+    background: rgba(241, 245, 249, 1);
+    border-radius: 16px;
+    padding: 16px;
+    gap: 16px;
+  }
+  .BlockWithPdfMaterials .pdfRectangleImgContainer {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    max-height: 48px;
+    flex-shrink: 0;
+  }
+  .BlockWithPdfMaterials .pdfItemText {
+    margin-top: 0;
+    font-size: 14px;
+    line-height: 140%;
+    flex: 1;
+    display: block;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    -webkit-box-orient: unset;
+    overflow: visible;
+    text-overflow: unset;
+  }
+  .testVideoItem {
+    flex-shrink: 0;
+    width: 300px;
+    min-width: 300px;
+  }
+  .testVideoRectangleImgContainer {
+    width: 100%;
+    height: 190px;
+  }
+  .testVideoRectangleImg {
+    width: 100%;
+    height: 190px;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+  .testVideoItemText {
+    font-size: 13px;
+    margin-top: 8px;
+  }
 }
