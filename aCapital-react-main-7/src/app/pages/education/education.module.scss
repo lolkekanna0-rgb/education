@@ -1,6 +1,6 @@
 .educationCard {
   width: 936px;
-  min-height: 348px;
+  height: 100%;
   background: rgba(255, 255, 255, 1);
   padding: 40px;
   border-radius: 16px;
@@ -15,16 +15,16 @@
   line-height: 125%;
   color: var(--gray-dark);
   margin: 0;
-  margin-bottom: 32px;
+  margin-bottom: 12px;
 }
 
 .descriptionContainer {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 24px;
+
   width: 856px;
-  height: 130px;
+  height: 100%;
 }
 
 .description {
@@ -51,11 +51,11 @@
   cursor: pointer;
   transition: background-color 0.2s;
   align-self: flex-start;
-  margin-top: auto;
   box-shadow: 0 4px 8px 0 rgba(229, 105, 105, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 48px;
 }
 
 .testButton:hover {
@@ -86,6 +86,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 24px;
 }
 
 .backButton:hover {
